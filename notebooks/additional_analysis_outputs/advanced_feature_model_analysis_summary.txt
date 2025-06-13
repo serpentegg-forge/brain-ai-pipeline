@@ -1,0 +1,592 @@
+## Análisis Adicionales para la Predicción del Tratamiento
+
+### 1. Interacciones de Características
+
+--- 1.1. Perfil de Síntomas por Sexo ---
+Tabla de Intensidad Mediana de Síntomas por Sexo:
+                            F    M
+balance_problem           4.0  5.0
+blackout                  5.0  4.0
+cognitive_impairment      5.0  5.0
+concentration_difficulty  5.0  5.0
+dizzines                  5.0  4.0
+fatigue                   2.0  2.0
+headach                   3.0  3.0
+memory_problem            5.0  4.0
+motor_coordination_issue  3.0  3.0
+nausea                    5.0  4.0
+neurological_weakness     2.0  2.0
+seizure                   4.0  4.0
+speech_issue              3.0  3.0
+vision_problem            3.0  3.0
+Tabla de Porcentaje de Ocurrencia de Síntomas por Sexo (%):
+                             F     M
+balance_problem            9.7   9.5
+blackout                   9.6   9.6
+cognitive_impairment      19.3  18.5
+concentration_difficulty   9.6   9.7
+dizzines                   9.9   9.7
+fatigue                    9.7  10.8
+headach                   20.6  20.6
+memory_problem            10.0  10.1
+motor_coordination_issue  19.2  20.3
+nausea                     9.8  10.1
+neurological_weakness     11.9  11.4
+seizure                   17.7  18.5
+speech_issue              31.1  30.4
+vision_problem            21.4  20.5
+Gráficos de perfil de síntomas por sexo guardados en 'additional_analysis_outputs'.
+
+--- 1.2. Perfil de Síntomas por Grupos de Edad ---
+Distribución de Grupos de Edad:
+age_group
+Adulto Mayor (50-70)    30.0
+Adulto (30-50)          28.4
+Anciano (>70)           23.8
+Joven (<30)             17.7%
+Tabla de Intensidad Mediana de Síntomas por Grupo de Edad:
+                          Joven (<30)  Adulto (30-50)  Adulto Mayor (50-70)  Anciano (>70)
+balance_problem                   4.0             4.5                   4.0            5.0
+blackout                          5.0             4.0                   4.0            5.0
+cognitive_impairment              5.0             5.0                   4.0            4.0
+concentration_difficulty          5.0             5.0                   5.0            4.0
+dizzines                          5.0             5.0                   5.0            4.0
+fatigue                           2.0             2.0                   2.0            2.0
+headach                           3.0             3.0                   3.0            3.0
+memory_problem                    4.0             5.0                   4.0            4.0
+motor_coordination_issue          3.0             3.0                   3.0            3.0
+nausea                            5.0             4.0                   5.0            4.0
+neurological_weakness             2.0             2.0                   2.0            2.0
+seizure                           5.0             4.0                   4.0            4.0
+speech_issue                      3.0             3.0                   3.0            3.0
+vision_problem                    3.0             3.0                   3.0            3.0
+Tabla de Porcentaje de Ocurrencia de Síntomas por Grupo de Edad (%):
+                          Joven (<30)  Adulto (30-50)  Adulto Mayor (50-70)  Anciano (>70)
+balance_problem                   9.7             9.3                   9.1           10.5
+blackout                          9.9             9.3                   9.9            9.5
+cognitive_impairment             18.6            19.7                  17.9           19.5
+concentration_difficulty          9.1            10.0                   9.0           10.4
+dizzines                         10.3             9.7                  10.6            8.7
+fatigue                          11.1             8.7                  10.6           11.0
+headach                          20.2            21.3                  21.4           19.1
+memory_problem                   10.8            10.5                   9.5            9.7
+motor_coordination_issue         19.0            18.6                  19.9           21.2
+nausea                            9.1            10.5                   9.4           10.5
+neurological_weakness            11.6            11.4                  11.6           12.1
+seizure                          17.2            19.0                  17.6           18.1
+speech_issue                     31.8            30.2                  32.0           29.3
+vision_problem                   20.6            21.8                  20.5           20.8
+Gráficos de perfil de síntomas por grupo de edad guardados en 'additional_analysis_outputs'.
+
+--- 1.3. Duración de Síntomas vs. Sexo, por Tratamiento ---
+Gráfico de duración por tratamiento y sexo guardado en 'additional_analysis_outputs'.
+Estadísticas Descriptivas: Duración de Síntomas por Tratamiento y Sexo:
+                       count        mean         std   min   25%   50%    75%    max
+treatment         sex                                                               
+chemotherapy      F    584.0  128.654110  120.674606  21.0  21.0  60.0  210.0  365.0
+                  M    582.0  117.814433  112.337762  21.0  21.0  60.0  210.0  365.0
+close monitoring  F    584.0  109.921233  122.797022  21.0  30.0  35.0  120.0  365.0
+                  M    545.0  106.486239  113.730494  21.0  30.0  90.0  120.0  365.0
+radiation therapy F    978.0   99.237219  102.291778  21.0  30.0  60.0  120.0  365.0
+                  M    903.0  100.637874  106.070086  21.0  30.0  60.0  120.0  365.0
+surgery           F    913.0   97.535597  100.826764  21.0  30.0  60.0  120.0  365.0
+                  M    923.0  100.799567  104.204704  21.0  30.0  60.0  120.0  365.0
+
+--- 1.4. Duración de Síntomas vs. Grupos de Edad, por Tratamiento ---
+Gráfico de duración por tratamiento y grupo de edad guardado en 'additional_analysis_outputs'.
+Estadísticas Descriptivas: Duración de Síntomas por Tratamiento y Grupo de Edad:
+                                        count        mean         std   min   25%   50%    75%    max
+treatment         age_group                                                                          
+chemotherapy      Joven (<30)           196.0  130.367347  118.616286  21.0  21.0  60.0  210.0  365.0
+                  Adulto (30-50)        356.0  121.039326  117.506074  21.0  21.0  60.0  210.0  365.0
+                  Adulto Mayor (50-70)  349.0  128.306590  119.014007  21.0  21.0  60.0  210.0  365.0
+                  Anciano (>70)         265.0  114.267925  110.777110  21.0  21.0  60.0  210.0  365.0
+close monitoring  Joven (<30)           200.0  104.080000  111.334002  21.0  30.0  90.0  120.0  365.0
+                  Adulto (30-50)        318.0  105.449686  118.439495  21.0  30.0  35.0  120.0  365.0
+                  Adulto Mayor (50-70)  353.0  107.424929  116.199283  21.0  30.0  90.0  120.0  365.0
+                  Anciano (>70)         258.0  116.120155  126.957594  21.0  30.0  35.0  120.0  365.0
+radiation therapy Joven (<30)           335.0   94.722388   99.676891  21.0  30.0  60.0  120.0  365.0
+                  Adulto (30-50)        510.0  106.623529  109.888528  21.0  30.0  60.0  120.0  365.0
+                  Adulto Mayor (50-70)  558.0   95.041219   99.204846  21.0  30.0  60.0  120.0  365.0
+                  Anciano (>70)         478.0  102.064854  106.182559  21.0  30.0  60.0  120.0  365.0
+surgery           Joven (<30)           336.0  104.556548  101.633743  21.0  30.0  60.0  120.0  365.0
+                  Adulto (30-50)        524.0  100.645038  105.484949  21.0  30.0  60.0  120.0  365.0
+                  Adulto Mayor (50-70)  544.0   94.571691   99.089475  21.0  30.0  60.0  120.0  365.0
+                  Anciano (>70)         432.0   99.009259  103.916104  21.0  30.0  60.0  120.0  365.0
+
+--- 1.5. Interacción entre Síntomas Específicos (Ejemplo) ---
+Relación entre Co-ocurrencia (Deterioro Cognitivo + Dificultad Concentración) y Tratamiento:
+Tabla de Contingencia (Conteos):
+co_cog_conc           0    1
+treatment                   
+chemotherapy       1012  154
+close monitoring   1013  116
+radiation therapy  1736  145
+surgery            1672  164
+Tabla de Contingencia (Porcentaje por tratamiento):
+co_cog_conc           0     1
+treatment                    
+chemotherapy       86.8  13.2
+close monitoring   89.7  10.3
+radiation therapy  92.3   7.7
+surgery            91.1   8.9%
+Gráfico de co-ocurrencia de síntomas vs tratamiento guardado en 'additional_analysis_outputs'.
+
+### 2. Análisis Multivariado Preliminar (Modelos Simples)
+
+--- 2.1. Árbol de Decisión Simple para predecir 'treatment' ---
+Reglas del Árbol de Decisión (Texto):
+|--- cat__condition_Brain Meningiomas <= 0.50
+|   |--- cat__condition_Brain Tumor <= 0.50
+|   |   |--- num__sym_cognitive_impairment <= 2.22
+|   |   |   |--- num__sym_vision_problem <= 3.44
+|   |   |   |   |--- class: chemotherapy
+|   |   |   |--- num__sym_vision_problem >  3.44
+|   |   |   |   |--- class: surgery
+|   |   |--- num__sym_cognitive_impairment >  2.22
+|   |   |   |--- num__sym_headach <= 1.40
+|   |   |   |   |--- class: radiation therapy
+|   |   |   |--- num__sym_headach >  1.40
+|   |   |   |   |--- class: surgery
+|   |--- cat__condition_Brain Tumor >  0.50
+|   |   |--- num__sym_cognitive_impairment <= 0.05
+|   |   |   |--- num__sym_nausea <= 3.30
+|   |   |   |   |--- class: close monitoring
+|   |   |   |--- num__sym_nausea >  3.30
+|   |   |   |   |--- class: radiation therapy
+|   |   |--- num__sym_cognitive_impairment >  0.05
+|   |   |   |--- num__sym_cognitive_impairment <= 2.22
+|   |   |   |   |--- class: surgery
+|   |   |   |--- num__sym_cognitive_impairment >  2.22
+|   |   |   |   |--- class: chemotherapy
+|--- cat__condition_Brain Meningiomas >  0.50
+|   |--- num__age <= 0.85
+|   |   |--- num__sym_vision_problem <= 0.46
+|   |   |   |--- num__sym_vision_problem <= -0.14
+|   |   |   |   |--- class: radiation therapy
+|   |   |   |--- num__sym_vision_problem >  -0.14
+|   |   |   |   |--- class: radiation therapy
+|   |   |--- num__sym_vision_problem >  0.46
+|   |   |   |--- num__age <= -1.54
+|   |   |   |   |--- class: radiation therapy
+|   |   |   |--- num__age >  -1.54
+|   |   |   |   |--- class: surgery
+|   |--- num__age >  0.85
+|   |   |--- num__age <= 1.67
+|   |   |   |--- num__sym_vision_problem <= -0.14
+|   |   |   |   |--- class: radiation therapy
+|   |   |   |--- num__sym_vision_problem >  -0.14
+|   |   |   |   |--- class: radiation therapy
+|   |   |--- num__age >  1.67
+|   |   |   |--- num__sym_headach <= 0.48
+|   |   |   |   |--- class: surgery
+|   |   |   |--- num__sym_headach >  0.48
+|   |   |   |   |--- class: radiation therapy
+
+Gráfico del árbol de decisión guardado en 'additional_analysis_outputs'.
+
+--- 2.2. Regresión Logística para predecir 'treatment' ---
+Clases del modelo de Regresión Logística: ['chemotherapy', 'close monitoring', 'radiation therapy', 'surgery']
+Coeficientes de Regresión Logística (modelo One-vs-Rest):
+
+--- Coeficientes para la clase 'chemotherapy' vs. Resto (Top/Bottom 5) ---
+Más Positivos:
+                                   Coef_vs_chemotherapy
+num__sym_blackout                              0.050390
+num__sym_cognitive_impairment                  0.036196
+cat__sex_M                                     0.036165
+num__sym_concentration_difficulty              0.027827
+num__sym_seizure                               0.015047
+Más Negativos:
+                                  Coef_vs_chemotherapy
+cat__condition_Brain Meningiomas             -2.853581
+num__sym_neurological_weakness               -0.544593
+num__sym_fatigue                             -0.503728
+cat__condition_Brain Tumor                   -0.392658
+num__duration_days                           -0.031475
+
+--- Coeficientes para la clase 'close monitoring' vs. Resto (Top/Bottom 5) ---
+Más Positivos:
+                                   Coef_vs_close monitoring
+cat__condition_Brain Meningiomas                   1.562969
+cat__condition_Brain Tumor                         1.147044
+num__sym_concentration_difficulty                  0.433135
+num__sym_motor_coordination_issue                  0.086356
+num__sym_balance_problem                           0.065226
+Más Negativos:
+                               Coef_vs_close monitoring
+num__sym_memory_problem                       -0.645623
+num__sym_cognitive_impairment                 -0.634747
+num__sym_dizzines                             -0.629508
+num__sym_vision_problem                       -0.170471
+cat__sex_M                                    -0.128296
+
+--- Coeficientes para la clase 'radiation therapy' vs. Resto (Top/Bottom 5) ---
+Más Positivos:
+                                  Coef_vs_radiation therapy
+cat__condition_Brain Meningiomas                   0.187363
+num__sym_cognitive_impairment                      0.063873
+num__sym_nausea                                    0.051806
+num__age                                           0.048073
+num__sym_balance_problem                           0.023028
+Más Negativos:
+                                   Coef_vs_radiation therapy
+cat__condition_Brain Tumor                         -0.437007
+cat__sex_M                                         -0.071879
+num__sym_concentration_difficulty                  -0.049356
+num__sym_headach                                   -0.030490
+num__sym_neurological_weakness                     -0.024364
+
+--- Coeficientes para la clase 'surgery' vs. Resto (Top/Bottom 5) ---
+Más Positivos:
+                                   Coef_vs_surgery
+num__sym_concentration_difficulty         0.067373
+cat__sex_M                                0.056799
+num__sym_memory_problem                   0.026759
+num__sym_vision_problem                   0.023312
+num__sym_headach                          0.017449
+Más Negativos:
+                               Coef_vs_surgery
+cat__condition_Brain Tumor           -0.248128
+num__sym_cognitive_impairment        -0.073933
+num__sym_balance_problem             -0.066560
+num__sym_nausea                      -0.057615
+num__sym_speech_issue                -0.034518
+
+### 3. Análisis de Subgrupos Específicos
+
+--- Tratamiento de Gliomas por Duración de Síntomas ---
+Gráfico de duración para gliomas por tratamiento guardado en 'additional_analysis_outputs'.
+Estadísticas descriptivas de duration_days para Gliomas, por Tratamiento:
+                   count       mean        std   min   25%   50%    75%    max
+treatment                                                                     
+chemotherapy       673.0  96.035661  81.594372  21.0  21.0  60.0  210.0  210.0
+radiation therapy  665.0  92.142857  79.320072  21.0  21.0  60.0  210.0  210.0
+surgery            666.0  93.045045  79.986208  21.0  21.0  60.0  210.0  210.0
+
+### 4. Relación entre Número de Síntomas y Tratamiento
+Distribución del Número de Síntomas:
+count    6012.000000
+mean        2.096307
+std         0.295037
+min         2.000000
+25%         2.000000
+50%         2.000000
+75%         2.000000
+max         3.000000
+Gráfico de número de síntomas por tratamiento guardado en 'additional_analysis_outputs'.
+Estadísticas descriptivas del Número de Síntomas, por Tratamiento:
+                    count      mean       std  min  25%  50%  75%  max
+treatment                                                             
+chemotherapy       1166.0  2.132075  0.338718  2.0  2.0  2.0  2.0  3.0
+close monitoring   1129.0  2.102746  0.303761  2.0  2.0  2.0  2.0  3.0
+radiation therapy  1881.0  2.077087  0.266800  2.0  2.0  2.0  2.0  3.0
+surgery            1836.0  2.089325  0.285289  2.0  2.0  2.0  2.0  3.0
+
+--- Fin de Análisis Adicionales ---
+
+
+## Perspectivas Adicionales sobre la Importancia de Características para 'treatment'
+
+### 1. Importancia de Características con Random Forest
+
+--- 1.1. Gini Importance (Mean Decrease in Impurity) ---
+Top 20 Características por Gini Importance:
+num__age                             0.463936
+num__duration_days                   0.090760
+num__sym_speech_issue                0.053051
+cat__sex_M                           0.051405
+num__sym_seizure                     0.039518
+num__sym_vision_problem              0.032400
+num__sym_headach                     0.032071
+num__sym_motor_coordination_issue    0.031923
+num__sym_cognitive_impairment        0.029195
+cat__condition_Brain Meningiomas     0.026144
+num__sym_blackout                    0.021017
+num__sym_balance_problem             0.020518
+num__sym_nausea                      0.020468
+num__sym_dizzines                    0.019650
+num__sym_memory_problem              0.019637
+num__sym_neurological_weakness       0.014083
+num__sym_fatigue                     0.013370
+num__sym_concentration_difficulty    0.010698
+cat__condition_Brain Tumor           0.010154
+Gráfico de Gini Importance guardado en 'additional_analysis_outputs'.
+
+--- 1.2. Permutation Importance ---
+Top 20 Características por Permutation Importance:
+num__age                                           0.4752 +/- 0.0054
+num__duration_days                                 0.3535 +/- 0.0053
+cat__sex_M                                         0.2814 +/- 0.0057
+cat__condition_Brain Meningiomas                   0.1194 +/- 0.0026
+num__sym_speech_issue                              0.1030 +/- 0.0031
+cat__condition_Brain Tumor                         0.0955 +/- 0.0022
+num__sym_motor_coordination_issue                  0.0866 +/- 0.0022
+num__sym_vision_problem                            0.0727 +/- 0.0024
+num__sym_headach                                   0.0713 +/- 0.0016
+num__sym_seizure                                   0.0653 +/- 0.0019
+num__sym_neurological_weakness                     0.0490 +/- 0.0015
+num__sym_fatigue                                   0.0456 +/- 0.0010
+num__sym_cognitive_impairment                      0.0436 +/- 0.0021
+num__sym_nausea                                    0.0414 +/- 0.0011
+num__sym_dizzines                                  0.0413 +/- 0.0012
+num__sym_memory_problem                            0.0409 +/- 0.0010
+num__sym_balance_problem                           0.0398 +/- 0.0009
+num__sym_blackout                                  0.0330 +/- 0.0010
+num__sym_concentration_difficulty                  0.0048 +/- 0.0002
+Gráfico de Permutation Importance guardado en 'additional_analysis_outputs'.
+
+### 2. Análisis de Varianza (ANOVA) y Pruebas Chi-cuadrado
+
+--- 2.1. ANOVA (Variables Numéricas vs. Treatment) ---
+
+
+## Perspectivas Adicionales sobre la Importancia de Características para 'treatment'
+
+### 1. Importancia de Características con Random Forest
+
+--- 1.1. Gini Importance (Mean Decrease in Impurity) ---
+Top 20 Características por Gini Importance:
+num__age                             0.463936
+num__duration_days                   0.090760
+num__sym_speech_issue                0.053051
+cat__sex_M                           0.051405
+num__sym_seizure                     0.039518
+num__sym_vision_problem              0.032400
+num__sym_headach                     0.032071
+num__sym_motor_coordination_issue    0.031923
+num__sym_cognitive_impairment        0.029195
+cat__condition_Brain Meningiomas     0.026144
+num__sym_blackout                    0.021017
+num__sym_balance_problem             0.020518
+num__sym_nausea                      0.020468
+num__sym_dizzines                    0.019650
+num__sym_memory_problem              0.019637
+num__sym_neurological_weakness       0.014083
+num__sym_fatigue                     0.013370
+num__sym_concentration_difficulty    0.010698
+cat__condition_Brain Tumor           0.010154
+Gráfico de Gini Importance guardado en 'additional_analysis_outputs'.
+
+--- 1.2. Permutation Importance ---
+Top 20 Características por Permutation Importance:
+num__age                                           0.4752 +/- 0.0054
+num__duration_days                                 0.3535 +/- 0.0053
+cat__sex_M                                         0.2815 +/- 0.0057
+cat__condition_Brain Meningiomas                   0.1194 +/- 0.0026
+num__sym_speech_issue                              0.1030 +/- 0.0031
+cat__condition_Brain Tumor                         0.0955 +/- 0.0022
+num__sym_motor_coordination_issue                  0.0866 +/- 0.0022
+num__sym_vision_problem                            0.0727 +/- 0.0024
+num__sym_headach                                   0.0713 +/- 0.0016
+num__sym_seizure                                   0.0653 +/- 0.0019
+num__sym_neurological_weakness                     0.0490 +/- 0.0015
+num__sym_fatigue                                   0.0456 +/- 0.0010
+num__sym_cognitive_impairment                      0.0436 +/- 0.0021
+num__sym_nausea                                    0.0414 +/- 0.0011
+num__sym_dizzines                                  0.0413 +/- 0.0012
+num__sym_memory_problem                            0.0409 +/- 0.0010
+num__sym_balance_problem                           0.0398 +/- 0.0009
+num__sym_blackout                                  0.0330 +/- 0.0010
+num__sym_concentration_difficulty                  0.0048 +/- 0.0002
+Gráfico de Permutation Importance guardado en 'additional_analysis_outputs'.
+
+### 2. Análisis de Varianza (ANOVA) y Pruebas Chi-cuadrado
+
+--- 2.1. ANOVA (Variables Numéricas vs. Treatment) ---
+Error en Tukey HSD para 'duration_days': 'treatment'
+Error en Tukey HSD para 'sym_balance_problem': 'treatment'
+Error en Tukey HSD para 'sym_blackout': 'treatment'
+Error en Tukey HSD para 'sym_cognitive_impairment': 'treatment'
+Error en Tukey HSD para 'sym_concentration_difficulty': 'treatment'
+Error en Tukey HSD para 'sym_dizzines': 'treatment'
+Error en Tukey HSD para 'sym_fatigue': 'treatment'
+Error en Tukey HSD para 'sym_headach': 'treatment'
+Error en Tukey HSD para 'sym_memory_problem': 'treatment'
+Error en Tukey HSD para 'sym_motor_coordination_issue': 'treatment'
+Error en Tukey HSD para 'sym_nausea': 'treatment'
+Error en Tukey HSD para 'sym_neurological_weakness': 'treatment'
+Error en Tukey HSD para 'sym_seizure': 'treatment'
+Error en Tukey HSD para 'sym_vision_problem': 'treatment'
+Resultados de ANOVA (ordenados por p-value):
+                  Característica  F-statistic       p-value
+12     sym_neurological_weakness    68.424881  1.667545e-43
+7                    sym_fatigue    59.036770  1.315805e-37
+9             sym_memory_problem    54.527214  9.106020e-35
+6                   sym_dizzines    51.680244  5.686636e-33
+4       sym_cognitive_impairment    38.408932  1.406371e-24
+10  sym_motor_coordination_issue    28.317526  3.552577e-18
+13                   sym_seizure    24.927813  5.048031e-16
+15            sym_vision_problem    16.500637  1.124295e-10
+2            sym_balance_problem    14.983472  1.027004e-09
+1                  duration_days    14.243682  3.016934e-09
+3                   sym_blackout    12.336855  4.830842e-08
+8                    sym_headach    11.624211  1.359344e-07
+11                    sym_nausea    10.621028  5.818713e-07
+5   sym_concentration_difficulty     9.948276  1.540112e-06
+14              sym_speech_issue     0.999510  3.919286e-01
+0                            age     0.971042  4.052878e-01
+
+--- 2.2. Chi-cuadrado (Variables Categóricas vs. Treatment) ---
+
+
+## Perspectivas Adicionales sobre la Importancia de Características para 'treatment'
+
+### 1. Importancia de Características con Random Forest
+
+--- 1.1. Gini Importance (Mean Decrease in Impurity) ---
+Top 20 Características por Gini Importance:
+num__age                             0.463936
+num__duration_days                   0.090760
+num__sym_speech_issue                0.053051
+cat__sex_M                           0.051405
+num__sym_seizure                     0.039518
+num__sym_vision_problem              0.032400
+num__sym_headach                     0.032071
+num__sym_motor_coordination_issue    0.031923
+num__sym_cognitive_impairment        0.029195
+cat__condition_Brain Meningiomas     0.026144
+num__sym_blackout                    0.021017
+num__sym_balance_problem             0.020518
+num__sym_nausea                      0.020468
+num__sym_dizzines                    0.019650
+num__sym_memory_problem              0.019637
+num__sym_neurological_weakness       0.014083
+num__sym_fatigue                     0.013370
+num__sym_concentration_difficulty    0.010698
+cat__condition_Brain Tumor           0.010154
+Gráfico de Gini Importance guardado en 'additional_analysis_outputs'.
+
+--- 1.2. Permutation Importance ---
+Top 20 Características por Permutation Importance:
+num__age                                           0.4752 +/- 0.0054
+num__duration_days                                 0.3535 +/- 0.0053
+cat__sex_M                                         0.2815 +/- 0.0057
+cat__condition_Brain Meningiomas                   0.1194 +/- 0.0026
+num__sym_speech_issue                              0.1030 +/- 0.0031
+cat__condition_Brain Tumor                         0.0955 +/- 0.0022
+num__sym_motor_coordination_issue                  0.0866 +/- 0.0022
+num__sym_vision_problem                            0.0727 +/- 0.0024
+num__sym_headach                                   0.0713 +/- 0.0016
+num__sym_seizure                                   0.0653 +/- 0.0019
+num__sym_neurological_weakness                     0.0490 +/- 0.0015
+num__sym_fatigue                                   0.0456 +/- 0.0010
+num__sym_cognitive_impairment                      0.0436 +/- 0.0021
+num__sym_nausea                                    0.0414 +/- 0.0011
+num__sym_dizzines                                  0.0413 +/- 0.0012
+num__sym_memory_problem                            0.0409 +/- 0.0010
+num__sym_balance_problem                           0.0398 +/- 0.0009
+num__sym_blackout                                  0.0330 +/- 0.0010
+num__sym_concentration_difficulty                  0.0048 +/- 0.0002
+Gráfico de Permutation Importance guardado en 'additional_analysis_outputs'.
+
+### 2. Análisis de Varianza (ANOVA) y Pruebas Chi-cuadrado
+
+--- 2.1. ANOVA (Variables Numéricas vs. Treatment) ---
+Error en Tukey HSD para 'duration_days': 'treatment'
+Error en Tukey HSD para 'sym_balance_problem': 'treatment'
+Error en Tukey HSD para 'sym_blackout': 'treatment'
+Error en Tukey HSD para 'sym_cognitive_impairment': 'treatment'
+Error en Tukey HSD para 'sym_concentration_difficulty': 'treatment'
+Error en Tukey HSD para 'sym_dizzines': 'treatment'
+Error en Tukey HSD para 'sym_fatigue': 'treatment'
+Error en Tukey HSD para 'sym_headach': 'treatment'
+Error en Tukey HSD para 'sym_memory_problem': 'treatment'
+Error en Tukey HSD para 'sym_motor_coordination_issue': 'treatment'
+Error en Tukey HSD para 'sym_nausea': 'treatment'
+Error en Tukey HSD para 'sym_neurological_weakness': 'treatment'
+Error en Tukey HSD para 'sym_seizure': 'treatment'
+Error en Tukey HSD para 'sym_vision_problem': 'treatment'
+Resultados de ANOVA (ordenados por p-value):
+                  Característica  F-statistic       p-value
+12     sym_neurological_weakness    68.424881  1.667545e-43
+7                    sym_fatigue    59.036770  1.315805e-37
+9             sym_memory_problem    54.527214  9.106020e-35
+6                   sym_dizzines    51.680244  5.686636e-33
+4       sym_cognitive_impairment    38.408932  1.406371e-24
+10  sym_motor_coordination_issue    28.317526  3.552577e-18
+13                   sym_seizure    24.927813  5.048031e-16
+15            sym_vision_problem    16.500637  1.124295e-10
+2            sym_balance_problem    14.983472  1.027004e-09
+1                  duration_days    14.243682  3.016934e-09
+3                   sym_blackout    12.336855  4.830842e-08
+8                    sym_headach    11.624211  1.359344e-07
+11                    sym_nausea    10.621028  5.818713e-07
+5   sym_concentration_difficulty     9.948276  1.540112e-06
+14              sym_speech_issue     0.999510  3.919286e-01
+0                            age     0.971042  4.052878e-01
+
+--- 2.2. Chi-cuadrado (Variables Categóricas vs. Treatment) ---
+Resultados de Prueba Chi-cuadrado (ordenados por p-value):
+  Característica  Chi2-statistic        p-value  df
+0      condition     1275.603983  2.069275e-272   6
+1            sex        2.527394   4.703607e-01   3
+2      age_group        7.746756   5.598549e-01   9
+
+### 3. Regresión Logística con Estrategia Multinomial
+Clases del modelo de Regresión Logística Multinomial: ['chemotherapy', 'close monitoring', 'radiation therapy', 'surgery']
+Coeficientes de Regresión Logística Multinomial:
+
+--- Coeficientes directos para 'chemotherapy' (Top/Bottom 5) ---
+Más Positivos:
+                               LogOdds_vs_ImplicitRef_chemotherapy
+num__sym_memory_problem                                   0.200320
+num__sym_cognitive_impairment                             0.195826
+num__sym_dizzines                                         0.189504
+cat__sex_M                                                0.051889
+num__sym_vision_problem                                   0.047822
+Más Negativos:
+                                   LogOdds_vs_ImplicitRef_chemotherapy
+cat__condition_Brain Meningiomas                             -2.409767
+num__sym_neurological_weakness                               -0.532407
+num__sym_fatigue                                             -0.494957
+cat__condition_Brain Tumor                                   -0.444526
+num__sym_concentration_difficulty                            -0.109787
+
+--- Coeficientes para log-odds de 'close monitoring' vs. 'chemotherapy' (Top/Bottom 5) ---
+Más Positivos (favorecen esta clase sobre referencia):
+                                   LogOdds_close monitoring_vs_chemotherapy
+cat__condition_Brain Meningiomas                                   4.360846
+cat__condition_Brain Tumor                                         1.745281
+num__sym_neurological_weakness                                     0.729076
+num__sym_fatigue                                                   0.682607
+num__sym_concentration_difficulty                                  0.464306
+Más Negativos (favorecen referencia sobre esta clase):
+                               LogOdds_close monitoring_vs_chemotherapy
+num__sym_memory_problem                                       -0.799293
+num__sym_dizzines                                             -0.775078
+num__sym_cognitive_impairment                                 -0.723616
+num__sym_vision_problem                                       -0.160322
+cat__sex_M                                                    -0.106864
+
+--- Coeficientes para log-odds de 'radiation therapy' vs. 'chemotherapy' (Top/Bottom 5) ---
+Más Positivos (favorecen esta clase sobre referencia):
+                                  LogOdds_radiation therapy_vs_chemotherapy
+cat__condition_Brain Meningiomas                                   2.706050
+num__sym_neurological_weakness                                     0.688965
+num__sym_fatigue                                                   0.646048
+num__age                                                           0.047985
+num__duration_days                                                 0.040504
+Más Negativos (favorecen referencia sobre esta clase):
+                                   LogOdds_radiation therapy_vs_chemotherapy
+cat__sex_M                                                         -0.095430
+cat__condition_Brain Tumor                                         -0.057041
+num__sym_concentration_difficulty                                  -0.052770
+num__sym_blackout                                                  -0.047299
+num__sym_headach                                                   -0.030601
+
+--- Coeficientes para log-odds de 'surgery' vs. 'chemotherapy' (Top/Bottom 5) ---
+Más Positivos (favorecen esta clase sobre referencia):
+                                   LogOdds_surgery_vs_chemotherapy
+cat__condition_Brain Meningiomas                          2.572171
+num__sym_neurological_weakness                            0.711587
+num__sym_fatigue                                          0.651172
+cat__condition_Brain Tumor                                0.089862
+num__sym_concentration_difficulty                         0.027610
+Más Negativos (favorecen referencia sobre esta clase):
+                               LogOdds_surgery_vs_chemotherapy
+num__sym_cognitive_impairment                        -0.077282
+num__sym_balance_problem                             -0.049199
+num__sym_nausea                                      -0.043648
+num__sym_blackout                                    -0.042493
+num__sym_seizure                                     -0.014272
